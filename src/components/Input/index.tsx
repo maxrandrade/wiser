@@ -1,7 +1,8 @@
 import React from 'react'
+import { FieldError } from 'react-hook-form'
 import { Label, InputWrapper, StyledInput, ErrorIcon, ErrorMessage } from './style'
 
-const Input: React.FC<InputProps> = ({ label, name, type, teste, error }) => {
+const Input: React.FC<InputProps> = ({ label, name, type, reference, error }) => {
   const hasError = !!error
 
   return (
@@ -12,7 +13,7 @@ const Input: React.FC<InputProps> = ({ label, name, type, teste, error }) => {
           name={name}
           id={name}
           type={type}
-          ref={teste}
+          ref={reference}
           hasError={hasError}
         />
         <ErrorIcon hasError={hasError}>&#215;</ErrorIcon>
@@ -26,8 +27,12 @@ export interface InputProps {
   label: string
   name: string
   type: InputTypes
-  teste: any
-  error: any
+  error: FieldError
+  reference: any
+}
+
+export interface ErrorProps {
+  hasError: boolean
 }
 
 export enum InputTypes {

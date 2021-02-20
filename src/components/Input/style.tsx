@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { ErrorProps } from '.'
 
 export const Label = styled.label`
   display: block;
@@ -12,7 +13,7 @@ export const InputWrapper = styled.div`
   position: relative;
 `
 
-export const StyledInput = styled.input<any>`
+export const StyledInput = styled.input<ErrorProps>`
   display: block;
   margin: 8px 0px 16px;
   padding: 16px;
@@ -28,7 +29,7 @@ export const StyledInput = styled.input<any>`
   width: 100%;
 `
 
-export const ErrorIcon = styled.span<any>`
+export const ErrorIcon = styled.span<ErrorProps>`
   position: absolute;
   right: 20px;
   top: 50%;

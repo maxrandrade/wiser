@@ -11,7 +11,6 @@ const strings = {
         emptyEmail: 'Digite seu e-mail',
         invalidEmail: 'Digite um e-mail válido',
         emptyPassword: 'Digite sua senha',
-        invalidPassword: 'Senha incorreta',
       }
     }
   }

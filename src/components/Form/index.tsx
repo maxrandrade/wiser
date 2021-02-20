@@ -8,9 +8,9 @@ import * as yup from 'yup';
 import { setUserRequest } from '../../redux/actions'
 import { connect } from 'react-redux'
 
-const { button, errors: { emptyEmail, invalidEmail, emptyPassword, invalidPassword } } = strings.pages.login
+const { button, errors: { emptyEmail, invalidEmail, emptyPassword } } = strings.pages.login
 
-const inputFields = [
+const inputFields: InputFieldInterface[] = [
   {
     label: 'E-mail',
     name: 'email',
@@ -28,24 +28,27 @@ const schema = yup.object().shape({
   password: yup.string().required(emptyPassword),
 });
 
-const Form: React.FC<any> = ({ setUserRequest }) => {
+const Form: React.FC<FormProps> = ({ setUserRequest }) => {
 
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   })
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: FormData) => {
     setUserRequest(data)
   }
+
+  React.useEffect(() => console.log(errors), [errors])
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       {inputFields.map(({ label, name, type }, key: number) => (
         <Input
           label={label}
-          name={name} type={type}
+          name={name}
+          type={type}
           key={key}
-          teste={register}
+          reference={register}
           error={errors[name]}
         />
       ))}
@@ -55,3 +58,18 @@ const Form: React.FC<any> = ({ setUserRequest }) => {
 }
 
 export default connect(null, {setUserRequest})(Form)
+
+interface FormProps {
+  setUserRequest: (payload: any) => void
+}
+
+interface InputFieldInterface {
+  label: string
+  name: string
+  type: InputTypes
+}
+
+interface FormData {
+  email: string
+  password: string
+}
