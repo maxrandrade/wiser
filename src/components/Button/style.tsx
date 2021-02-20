@@ -9,7 +9,7 @@ export const StyledButton = styled.button`
   color: ${({ theme }) => theme.colors.white};
   text-transform: uppercase;
   font-weight: 600;
-  font-family: Montserrat, sans-serif;
+  font-family: inherit;
   text-align: center;
   width: 100%;
   outline: none;

@@ -45,8 +45,9 @@ export const LoginContainer = styled.div`
     transform: translateX(-50%);
     z-index: 10;
     border-radius: 8px;
-    padding: 24px 28px;
+    padding: 24px 26px;
     justify-content: center;
+    min-width: 310px;
   }
 `
 
