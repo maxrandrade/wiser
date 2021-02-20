@@ -5,6 +5,7 @@ const theme = {
     secondary: '#989FDB',
     surface: '#FAF5FF',
     link: '#9739AC',
+    success: '#5CB85C',
     error: '#FF377F',
     gradientStart: '#130525',
     gradientEnd: 'rgba(105, 57, 153, 0)',

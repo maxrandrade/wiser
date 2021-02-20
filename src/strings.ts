@@ -7,6 +7,7 @@ const strings = {
       button: 'Entrar',
       forgotPassword: 'Esqueceu seu login ou senha? Clique ',
       forgotPasswordLink: 'aqui',
+      successLoginMessage: 'Seja bem-vindo de volta',
       errors: {
         emptyEmail: 'Digite seu e-mail',
         invalidEmail: 'Digite um e-mail válido',
