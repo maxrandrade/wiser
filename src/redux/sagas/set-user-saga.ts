@@ -6,7 +6,9 @@ import { SET_USER_REQUEST } from '../action-types'
 export function* doLogin (action: any) {
   try {
     const response = yield call(auth, action.payload)
-    yield put(setUser(response.data))
+    const parsedData = response?.data && JSON.parse(response.data)
+
+    yield put(setUser(parsedData))
   } catch (error) {
     console.log(error)
   }

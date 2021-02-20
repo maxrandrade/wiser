@@ -38,8 +38,6 @@ const Form: React.FC<FormProps> = ({ setUserRequest }) => {
     setUserRequest(data)
   }
 
-  React.useEffect(() => console.log(errors), [errors])
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       {inputFields.map(({ label, name, type }, key: number) => (
