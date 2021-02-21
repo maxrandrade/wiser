@@ -15,6 +15,11 @@ yarn dev
 
 O projeto estará ativo no link: [http://localhost:3000](http://localhost:3000).
 
+#### Adições que gostaria de realizar:
+
+- Otimizar as importações com o uso de alias, evitando navegações com `../../`
+- Adicionar linters e aprimorar o coding style.
+
 
 ## Login - WISER (EN)
 
@@ -24,7 +29,7 @@ Project for Wiser's technical test.
 
 Project is managed with `yarn`. If you do not have this dependency installed, access [`this tutorial`](https://classic.yarnpkg.com/en/docs/install/#windows-stable) first.
 
-Once yarn is already installed, go to the projects folter and run these commands on your terminal, one at a time.
+Once yarn is already installed, go to the projects folder and run these commands on your terminal, one at a time.
 
 ```bash
 yarn install
@@ -32,3 +37,9 @@ yarn dev
 ```
 
 Now you can access the project through the link: [http://localhost:3000](http://localhost:3000).
+
+
+#### Missing things I would like to add:
+
+- Optimize import handling with aliases, avoiding `../../` navigation.
+- Add linters and a enhance coding style.
