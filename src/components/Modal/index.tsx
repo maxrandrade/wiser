@@ -1,31 +1,43 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { closeModal } from '../../redux/actions'
 import { Dialog, Text, Close } from './style'
 import strings from '../../strings'
 
 const { successLoginMessage } = strings.pages.login
 
-const Modal: React.FC<ModalProps> = ({ username }) => {
-  const hasUserInfo = !!username
-  const [isOpen, setIsOpen] = React.useState<boolean>(hasUserInfo)
-
-  const handleClose = () => {
-    setIsOpen(false)
-  }
+const Modal: React.FC<ModalProps> = ({ modal, user, handleClose }) => {
 
   return (
-    <Dialog isOpen={isOpen}>
-      <Text>{successLoginMessage}, {username}!</Text>
+    <Dialog isOpen={modal.isOpen}>
+      <Text>{successLoginMessage}, {user?.username}!</Text>
       <Close type="button" onClick={handleClose}>&#215;</Close>
     </Dialog>
   )
 }
 
 export interface ModalProps {
-  username: string
+  user: UserProps,
+  modal: DialogProps,
+  handleClose(): void
 }
 
 export interface DialogProps {
   isOpen: boolean
 }
 
-export default Modal
+export interface UserProps {
+  username: string,
+  userId: string
+}
+
+const mapStateToProps = ({ user, modal }) => ({
+  user,
+  modal,
+})
+
+const mapDispatchToProps = dispatch => ({
+  handleClose: () => dispatch(closeModal())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Modal)

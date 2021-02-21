@@ -1,11 +1,12 @@
 import { SET_USER } from '../action-types'
+import { LoginAction } from '../redux-types'
 
 const initialState: UserData = {
   userId: '',
   username: '',
 }
 
-export const userReducer = (state: UserData = initialState, action: any) => {
+export const userReducer = (state: UserData = initialState, action: LoginAction) => {
   switch(action.type) {
     case SET_USER:
       return { ...state, ...action.payload }

@@ -58,7 +58,7 @@ const Form: React.FC<FormProps> = ({ setUserRequest }) => {
 export default connect(null, {setUserRequest})(Form)
 
 interface FormProps {
-  setUserRequest: (payload: any) => void
+  setUserRequest: (payload: FormData) => void
 }
 
 interface InputFieldInterface {
@@ -67,7 +67,7 @@ interface InputFieldInterface {
   type: InputTypes
 }
 
-interface FormData {
+export interface FormData {
   email: string
   password: string
 }

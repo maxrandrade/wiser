@@ -22,7 +22,7 @@ const LoginPage: React.FC = () => {
             <Text>{forgotPassword} <a href="#">{forgotPasswordLink}</a></Text>
           </Login>
         </LoginContainer>
-        <Modal username={'Max'}/>
+        <Modal />
       </Container>
     </>
   )

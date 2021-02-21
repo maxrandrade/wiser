@@ -1,8 +1,9 @@
 import axios from 'axios'
+import { FormData } from './components/Form'
 
 const apiUrl = 'https://run.mocky.io/v3/9649968d-be77-42f1-a8ff-e1125729bb27'
 
-export const auth = async (params: any) => await axios.get(apiUrl, {
+export const auth = async (params: FormData) => await axios.get(apiUrl, {
   params: { ...params },
   // Had to do it because of an axios bug
   // https://github.com/axios/axios/issues/1723
